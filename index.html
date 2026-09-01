@@ -1,188 +1,426 @@
-%-------------------------
-% Resume in Latex
-% Simar Rani - Technical Business Analyst / Scrum Master / Project Coordinator
-%------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simar Rani | Technical Business Analyst & Agile Project Manager</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-\documentclass[letterpaper,11pt]{article}
+  <!-- Mermaid.js for interactive diagrams -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true, theme:'dark'});</script>
 
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
-\usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage[english]{babel}
-\usepackage{tabularx}
-\renewcommand*\familydefault{\sfdefault}
-\usepackage[T1]{fontenc}
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --surface: #131d31;
+      --card-bg: rgba(23, 32, 54, 0.75);
+      --card-border: rgba(56, 189, 248, 0.15);
+      --primary: #38bdf8;
+      --primary-glow: rgba(56, 189, 248, 0.35);
+      --accent: #818cf8;
+      --accent-glow: rgba(129, 140, 248, 0.25);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
 
-% Colors
-\definecolor{light-grey}{gray}{0.83}
-\definecolor{dark-grey}{gray}{0.3}
-\definecolor{text-grey}{gray}{.08}
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(at 10% 20%, rgba(56, 189, 248, 0.08) 0px, transparent 50%),
+        radial-gradient(at 90% 80%, rgba(129, 140, 248, 0.08) 0px, transparent 50%);
+    }
 
-% Page Style
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+    .container { max-width: 1200px; margin: auto; padding: 0 2rem; }
 
-% Margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{0in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.65in}
-\addtolength{\textheight}{1.3in}
+    /* Nav */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 1000;
+      background: rgba(11, 15, 25, 0.9); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+    }
+    .nav-container {
+      max-width: 1200px; margin: auto; padding: 1.1rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .logo {
+      font-size: 1.3rem; font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: 0.2s; }
+    .nav-links a:hover { color: var(--primary); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #0b0f19; padding: 0.6rem 1.4rem; border-radius: 9999px;
+      font-weight: 700; text-decoration: none; font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 20px var(--primary-glow); }
+    .btn-secondary {
+      border: 1px solid var(--card-border); background: var(--surface);
+      color: var(--text); padding: 0.6rem 1.4rem; border-radius: 8px;
+      text-decoration: none; font-weight: 600; font-size: 0.9rem;
+      display: inline-flex; align-items: center; gap: 0.5rem; transition: 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--primary); background: rgba(56, 189, 248, 0.05); }
 
-\urlstyle{same}
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
+    /* Hero */
+    .hero { padding: 9rem 0 4rem; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; align-items: center; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--primary); padding: 0.35rem 0.9rem; border-radius: 9999px;
+      font-size: 0.85rem; font-weight: 600; margin-bottom: 1.2rem;
+    }
+    .badge span { width: 8px; height: 8px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 10px var(--primary); }
+    .hero h1 { font-size: 3.4rem; line-height: 1.15; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 1.2rem; }
+    .hero h1 span { background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-% Section Formatting
-\titleformat{\section}{
-  \bfseries \vspace{2pt} \raggedright \large
-}{}{0em}{}[\color{light-grey} {\titlerule[1.5pt]} \vspace{-4pt}]
+    /* Metrics Card */
+    .metrics-card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 16px; padding: 2rem; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 1.5rem; backdrop-filter: blur(16px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .metric-number { font-size: 2.2rem; font-weight: 800; color: var(--primary); font-family: 'JetBrains Mono', monospace; }
+    .metric-label { color: var(--text-muted); font-size: 0.85rem; font-weight: 500; }
 
-% Custom Commands
-\newcommand{\resumeItem}[1]{
-  \item\small{{#1 \vspace{-1.5pt}}}
-}
+    /* Global Sections */
+    section { padding: 4.5rem 0; }
+    .section-tag { color: var(--primary); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; display: block; }
+    .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 2.5rem; letter-spacing: -0.5px; }
 
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\
-      \textit{#3} & {\color{dark-grey}\small #4}\\
-    \end{tabular*}\vspace{-4pt}
-}
+    /* Framework Steps */
+    .framework-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .framework-card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 14px; padding: 2rem; position: relative;
+    }
+    .step-number { font-size: 2.5rem; font-weight: 800; color: rgba(56, 189, 248, 0.2); font-family: 'JetBrains Mono', monospace; margin-bottom: 0.5rem; }
+    .framework-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.8rem; color: #fff; }
+    .framework-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
 
-\newcommand{\resumeCompanyHeading}[2]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\
-    \end{tabular*}\vspace{-5pt}
-}
+    /* Project Cards */
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.8rem; }
+    .project-card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 16px; padding: 2rem; display: flex; flex-direction: column;
+      justify-content: space-between; transition: transform 0.2s;
+    }
+    .project-card:hover { transform: translateY(-4px); }
+    .project-tag { font-size: 0.75rem; color: var(--primary); text-transform: uppercase; font-weight: 700; letter-spacing: 1px; }
+    .project-card h3 { font-size: 1.35rem; font-weight: 700; margin: 0.4rem 0 0.8rem; color: #fff; }
+    .project-card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.2rem; }
+    .pill-cloud { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
+    .pill {
+      background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.2);
+      color: #e2e8f0; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.8rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
 
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-5pt}
-}
+    /* Artifacts / Interactive Tab Box */
+    .artifact-container {
+      background: var(--surface); border: 1px solid var(--card-border);
+      border-radius: 16px; overflow: hidden;
+    }
+    .artifact-tabs { display: flex; border-bottom: 1px solid var(--card-border); background: rgba(11, 15, 25, 0.6); }
+    .tab-btn {
+      padding: 1rem 1.8rem; background: none; border: none; color: var(--text-muted);
+      font-weight: 600; cursor: pointer; border-right: 1px solid var(--card-border);
+      transition: all 0.2s; font-size: 0.95rem;
+    }
+    .tab-btn.active { color: var(--primary); background: var(--surface); border-bottom: 2px solid var(--primary); }
+    .artifact-content { padding: 2.2rem; display: none; }
+    .artifact-content.active { display: block; }
+    .code-block {
+      background: #090d16; border: 1px solid var(--card-border); border-radius: 8px;
+      padding: 1.2rem; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;
+      color: #e2e8f0; overflow-x: auto; line-height: 1.5;
+    }
 
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-      #1 & {\color{dark-grey}\small #2} \\
-    \end{tabular*}\vspace{-4pt}
-}
+    /* Footer */
+    footer { border-top: 1px solid var(--card-border); padding: 4rem 0 2rem; background: #080c14; text-align: center; }
+    .contact-grid { display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; margin: 2rem 0; }
+    .contact-link-card {
+      background: var(--surface); border: 1px solid var(--card-border);
+      padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none;
+      color: var(--text); display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;
+    }
+    .contact-link-card:hover { border-color: var(--primary); }
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding-top: 7rem; }
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
 
-\color{text-grey}
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">SIMAR.RANI</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#methodology">Approach</a></li>
+        <li><a href="#projects">Deliverables & Projects</a></li>
+        <li><a href="#artifacts">Work Artifacts</a></li>
+      </ul>
+      <a href="mailto:bajajsimer@gmail.com" class="btn-primary"><i class="fa-solid fa-calendar-check"></i> Book Quick Chat</a>
+    </div>
+  </nav>
 
-\begin{document}
+  <div class="container">
+    <!-- Hero -->
+    <section class="hero" id="about">
+      <div>
+        <div class="badge"><span></span> Open to Scrum Master & BA Opportunities</div>
+        <h1>Bridging <span>Technical Architecture</span> with <span>Agile Execution</span></h1>
+        <p>
+          Technical Business Analyst & Project Coordinator with engineering experience in Python, FastAPI, and SQL. Translating complex business goals into high-impact sprint releases.
+        </p>
+        <div class="hero-actions">
+          <a href="#artifacts" class="btn-primary"><i class="fa-solid fa-eye"></i> View Live Artifacts</a>
+          <a href="mailto:bajajsimer@gmail.com?subject=Resume%20Request%20-%20Simar%20Rani" class="btn-secondary">
+            <i class="fa-solid fa-download"></i> Download Resume
+          </a>
+          <a href="https://linkedin.com/in/simarb1" target="_blank" class="btn-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
 
-%----------HEADING----------
-\begin{center}
-    \textbf{\Huge SIMAR RANI} \\ \vspace{4pt}
-    \small
-    +91-8685004096 \hspace{3pt}$|$\hspace{3pt}
-    \href{mailto:bajajsimer@gmail.com}{bajajsimer@gmail.com} \hspace{3pt}$|$\hspace{3pt}
-    \href{https://www.linkedin.com/in/simarb1/}{linkedin.com/in/simarb1} \hspace{3pt}$|$\hspace{3pt}
-    \href{https://github.com/simar755}{github.com/simar755}
-\end{center}
-\vspace{-8pt}
+      <!-- Live Counters -->
+      <div class="metrics-card">
+        <div>
+          <div class="metric-number">16+</div>
+          <div class="metric-label">Cross-functional Team Lead</div>
+        </div>
+        <div>
+          <div class="metric-number">95%</div>
+          <div class="metric-label">On-Time Sprint Completion</div>
+        </div>
+        <div>
+          <div class="metric-number">30%</div>
+          <div class="metric-label">Dev Rework Reduction</div>
+        </div>
+        <div>
+          <div class="metric-number">100+</div>
+          <div class="metric-label">Granular User Stories</div>
+        </div>
+      </div>
+    </section>
 
-%-----------SUMMARY-----------
-\section{PROFESSIONAL SUMMARY}
-\resumeSubHeadingListStart
-    \resumeItem{Technical Business Analyst and Project Coordinator with an engineering background in Python, SQL, and FastAPI. Experienced in owning the complete SDLC, driving Agile ceremonies, leading cross-functional teams of 16+, and authoring high-clarity BRD/FRDs, Epics, and Jira user stories with rigorous acceptance criteria. Proven expertise in bridging engineering, QA, and executive leadership through UAT to reduce dev rework by 30\% and maintain a 95\% on-time delivery record.}
-\resumeSubHeadingListEnd
+    <!-- Methodology / Philosophy -->
+    <section id="methodology">
+      <span class="section-tag">How I Deliver</span>
+      <h2 class="section-title">The Project Execution Framework</h2>
+      <div class="framework-grid">
+        <div class="framework-card">
+          <div class="step-number">01</div>
+          <h3>Discovery & BRD/FRD Scoping</h3>
+          <p>Elicit stakeholder requirements, document edge cases, identify workflow constraints, and produce detailed BRD/FRD documentation to ensure strict alignment.</p>
+        </div>
+        <div class="framework-card">
+          <div class="step-number">02</div>
+          <h3>API Contracts & Sprint Mapping</h3>
+          <p>Validate FastAPI payload schemas and REST endpoints with developers. Decompose deliverables into structured Epics and sprint-ready Jira user stories with acceptance criteria.</p>
+        </div>
+        <div class="framework-card">
+          <div class="step-number">03</div>
+          <h3>UAT, Bug Triage & Release</h3>
+          <p>Facilitate User Acceptance Testing (UAT) cycles, enforce structured bug triage in Jira (reducing MTTR by 25%), and report sprint progress via Power BI/Excel dashboards.</p>
+        </div>
+      </div>
+    </section>
 
-%-----------TECHNICAL SKILLS-----------
-\section{SKILLS}
-\begin{itemize}[leftmargin=0in, label={}]
-    \small{\item{
-    \textbf{Project Management \& Agile:} Scrum, Kanban, SDLC, Sprint Planning, Cross-Functional Team Leadership (16+ Members), Epic Documentation, BRD/FRD, User Stories, Acceptance Criteria, Backlog Refinement, UAT Facilitation, QA/Sanity Testing, Risk \& Dependency Management \\
-    \textbf{Data \& Analytics:} SQL, Advanced Microsoft Excel (Pivot Tables, XLOOKUP, Modeling), Power BI Dashboarding, Python (Pandas, NumPy, Matplotlib), Data Validation \\
-    \textbf{Tools \& Platforms:} Jira, Confluence, Postman, Git, GitHub, Bitbucket, VS Code \\
-    \textbf{Technical Foundations:} FastAPI, REST APIs, JSON Schema, Microservices, LLM \& Vector Search Integration
-    }}
-\end{itemize}
+    <!-- Projects Portfolio -->
+    <section id="projects">
+      <span class="section-tag">Case Studies</span>
+      <h2 class="section-title">Key Projects & Technical Deliverables</h2>
+      <div class="project-grid">
+        
+        <!-- Talyn360 -->
+        <div class="project-card">
+          <div>
+            <span class="project-tag">Enterprise Agile Delivery</span>
+            <h3>Talyn360 Management Platform</h3>
+            <p>Led project coordination and SDLC management across a 16-member team (Frontend, Backend, QA, UI/UX). Standardized sprint ceremonies and authored 100+ user stories with explicit acceptance criteria.</p>
+          </div>
+          <div class="pill-cloud">
+            <span class="pill">Scrum</span>
+            <span class="pill">Jira</span>
+            <span class="pill">FastAPI</span>
+            <span class="pill">API Contracts</span>
+            <span class="pill">UAT</span>
+          </div>
+        </div>
 
-%-----------EXPERIENCE-----------
-\section{EXPERIENCE}
-\resumeSubHeadingListStart
+        <!-- Blinkit Analytics -->
+        <div class="project-card">
+          <div>
+            <span class="project-tag">Business Intelligence</span>
+            <h3>Blinkit Sales & Inventory Analytics</h3>
+            <p>Architected interactive Power BI dashboards and Excel models analyzing sales performance, outlet distribution metrics, inventory movement, and consumer satisfaction parameters.</p>
+          </div>
+          <div class="pill-cloud">
+            <span class="pill">Power BI</span>
+            <span class="pill">Advanced Excel</span>
+            <span class="pill">SQL</span>
+            <span class="pill">Data Modeling</span>
+          </div>
+        </div>
 
-    \resumeCompanyHeading
-      {Alpha IT Managed Services}{Mohali, India $|$ Apr. 2025 -- Aug. 2026}
+        <!-- Medical Cost ML -->
+        <div class="project-card">
+          <div>
+            <span class="project-tag">Applied Machine Learning</span>
+            <h3>Medical Insurance Cost Estimator</h3>
+            <p>Developed an ML regression pipeline comparing Linear Regression, SVM, and Decision Tree models with hyperparameter tuning to achieve an 86% R² performance score.</p>
+          </div>
+          <div class="pill-cloud">
+            <span class="pill">Python</span>
+            <span class="pill">Scikit-learn</span>
+            <span class="pill">Pandas</span>
+            <span class="pill">Regression</span>
+          </div>
+        </div>
 
-      \resumeSubSubheading
-        {Business Analyst / Project Coordinator}{Oct. 2025 -- Aug. 2026}
-      \resumeItemListStart
-        \resumeItem{Led end-to-end Agile project coordination for \textbf{Talyn360}, directing a 16-member team across Frontend, Backend, UI/UX, and QA to achieve a \textbf{95\% on-time sprint release rate}.}
-        \resumeItem{Authored comprehensive \textbf{BRD/FRD and Epic documentation}, translating complex client requirements into 100+ Jira user stories and acceptance criteria, cutting requirement clarification delays by 30\%.}
-        \resumeItem{Facilitated all Scrum ceremonies (Sprint Planning, Daily Standups, Backlog Refinement, Retrospectives) and managed cross-team dependency mapping across the full SDLC.}
-        \resumeItem{Validated \textbf{FastAPI payload structures} and REST endpoints between frontend and backend teams, mitigating architectural mismatches and reducing dev rework by 30\%.}
-        \resumeItem{Led User Acceptance Testing (\textbf{UAT}) and established standardized Jira defect tracking protocols, cutting bug triage turnaround and MTTR by 25\%.}
-        \resumeItem{Configured dynamic \textbf{Jira, Power BI, and Excel dashboards} (sprint velocity, burn-down charts, release roadmaps) for executive stakeholder visibility.}
-      \resumeItemListEnd
+        <!-- Computer Vision Biometric -->
+        <div class="project-card">
+          <div>
+            <span class="project-tag">Computer Vision</span>
+            <h3>Biometric & Image Processing Pipeline</h3>
+            <p>Engineered image enhancement and recognition algorithms utilizing Gabor filtering, skeletonization, and OpenCV for feature matching and identity verification.</p>
+          </div>
+          <div class="pill-cloud">
+            <span class="pill">OpenCV</span>
+            <span class="pill">Python</span>
+            <span class="pill">Gabor Filtering</span>
+            <span class="pill">Biometrics</span>
+          </div>
+        </div>
 
-      \resumeSubSubheading
-        {Software Developer Intern}{Apr. 2025 -- Oct. 2025}
-      \resumeItemListStart
-        \resumeItem{Engineered performant backend microservices and RESTful APIs using \textbf{FastAPI} and PostgreSQL for enterprise client modules.}
-        \resumeItem{Implemented \textbf{vector search and LLM integrations}, optimizing document indexing, retrieval pipelines, and query response latency.}
-      \resumeItemListEnd
+      </div>
+    </section>
 
-    \resumeSubheading
-      {Excellence Technology}{Chandigarh, India}
-      {Data Science Intern Trainee}{Jun. 2023 -- Aug. 2023}
-      \resumeItemListStart
-        \resumeItem{Developed an end-to-end \textbf{Medical Cost Prediction system} in Python utilizing Linear Regression, SVM, and Decision Tree algorithms.}
-        \resumeItem{Executed exploratory data analysis, feature engineering, and hyperparameter tuning, achieving an optimal model fit with \textbf{86\% $R^2$ accuracy}.}
-      \resumeItemListEnd
+    <!-- Work Artifacts & Interactive Diagrams -->
+    <section id="artifacts">
+      <span class="section-tag">Proof of Execution</span>
+      <h2 class="section-title">Sample PM & BA Artifacts</h2>
 
-\resumeSubHeadingListEnd
+      <div class="artifact-container">
+        <div class="artifact-tabs">
+          <button class="tab-btn active" onclick="switchTab(event, 'story-tab')"><i class="fa-solid fa-list-check"></i> Sample User Story (Gherkin)</button>
+          <button class="tab-btn" onclick="switchTab(event, 'diagram-tab')"><i class="fa-solid fa-diagram-project"></i> System Flow Diagram</button>
+          <button class="tab-btn" onclick="switchTab(event, 'metrics-tab')"><i class="fa-solid fa-chart-pie"></i> QA Triage Workflow</button>
+        </div>
 
-%-----------PROJECTS-----------
-\section{KEY PROJECTS}
-\resumeSubHeadingListStart
-    \resumeProjectHeading
-      {\textbf{Talyn360 Enterprise Platform} $|$ \emph{Jira, Confluence, FastAPI, REST APIs, Agile/Scrum}}{Alpha IT Managed Services}
-      \resumeItemListStart
-        \resumeItem{Spearheaded requirement discovery, technical backlog scoping, and sprint execution for an enterprise SaaS solution across a 16-member engineering cohort.}
-        \resumeItem{Standardized system integration specs and API payload contracts, streamlining cross-module deployment pipelines.}
-      \resumeItemListEnd
-\resumeSubHeadingListEnd
+        <!-- Tab 1: User Story -->
+        <div id="story-tab" class="artifact-content active">
+          <h4 style="margin-bottom: 0.8rem; color: var(--primary);">Story: As a User, I want secure authentication with JWT & API validation</h4>
+          <div class="code-block">
+<strong>Feature:</strong> User Signup & JWT Token Generation
+<strong>Epic:</strong> TAL-104 Authentication & Role Management
 
-%-----------EDUCATION-----------
-\section{EDUCATION}
-\resumeSubHeadingListStart
-    \resumeSubheading
-      {Narsee Monjee Institute of Management Studies (NMIMS)}{Mumbai, India}
-      {MBA in Data Science \textnormal{(Concurrent with Diploma in Business Management - Rank 6/64, 82.3\%)}}{July 2025 -- Present}
-    \resumeSubheading
-      {Punjabi University}{Patiala, India}
-      {B.Tech in Computer Science and Engineering \textnormal{(CGPA: 8.74/10.0)}}{Sep. 2021 -- May 2025}
-\resumeSubHeadingListEnd
+<strong>Scenario 1: Successful Registration with valid payload</strong>
+  <strong>Given</strong> the client submits a POST request to `/api/v1/auth/signup`
+  <strong>And</strong> the payload contains a valid email, matching passwords, and role ID
+  <strong>When</strong> the backend validates the payload against the Pydantic schema
+  <strong>Then</strong> store the encrypted password in PostgreSQL
+  <strong>And</strong> return HTTP 201 Created with a signed JWT access token.
 
-%-----------ACHIEVEMENTS-----------
-\section{ACHIEVEMENTS \& RECOGNITION}
-\resumeSubHeadingListStart
-    \resumeItemListStart
-        \resumeItem{\textbf{Best Intern of the Month (2025):} Recognized at Alpha IT Managed Services for exceptional stakeholder coordination and project delivery.}
-        \resumeItem{\textbf{Academic Excellence (NMIMS):} Ranked 6th overall (Program Topper) and 2nd in Term-End Examinations among 64 candidates.}
-        \resumeItem{\textbf{Technical Problem Solving:} Solved 150+ data structures and algorithmic challenges on LeetCode and GeeksforGeeks.}
-    \resumeItemListEnd
-\resumeSubHeadingListEnd
+<strong>Scenario 2: Duplicate Email Rejection</strong>
+  <strong>Given</strong> an account exists with email "user@company.com"
+  <strong>When</strong> a new registration attempt is made with the same email
+  <strong>Then</strong> return HTTP 409 Conflict with error code `ERR_EMAIL_ALREADY_EXISTS`.
+          </div>
+        </div>
 
-\end{document}
+        <!-- Tab 2: Mermaid Diagram -->
+        <div id="diagram-tab" class="artifact-content">
+          <h4 style="margin-bottom: 1.2rem; color: var(--primary);">Interactive Auth & API Verification Sequence</h4>
+          <div class="mermaid">
+sequenceDiagram
+    autonumber
+    actor User
+    participant Frontend as UI/Frontend
+    participant API as FastAPI Backend
+    participant DB as PostgreSQL DB
+
+    User->>Frontend: Fill Registration Form
+    Frontend->>API: POST /api/v1/auth/signup (Payload)
+    API->>API: Validate Schema & Hash Password
+    API->>DB: Query User Existence
+    alt User Already Exists
+        DB-->>API: Duplicate Found
+        API-->>Frontend: 409 Conflict (ERR_EMAIL_EXISTS)
+    else User is New
+        API->>DB: Insert User Record
+        DB-->>API: Success (User ID)
+        API-->>Frontend: 201 Created + JWT Access Token
+        Frontend-->>User: Redirect to Dashboard
+    end
+          </div>
+        </div>
+
+        <!-- Tab 3: QA & Sprint Metrics -->
+        <div id="metrics-tab" class="artifact-content">
+          <h4 style="margin-bottom: 0.8rem; color: var(--primary);">QA Defect Severity & Triage Protocol</h4>
+          <div class="code-block">
+<strong>Defect Triage Matrix (Jira Service Desk Standard):</strong>
+• <strong>Blocker (P0):</strong> Core auth/payment down → 2-hour MTTR target → Immediate Dev Escalation.
+• <strong>Critical (P1):</strong> Major feature broken with no workaround → 8-hour MTTR target.
+• <strong>Major (P2):</strong> Non-critical functional flaw → Handled in current sprint backlog.
+• <strong>Minor / UI (P3):</strong> Cosmetic/label alignment → Groomed for subsequent sprint cycle.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Let's Connect</h2>
+      <p style="color: var(--text-muted);">Ready to bring structured Agile leadership and technical analysis to your team.</p>
+      
+      <div class="contact-grid">
+        <a href="tel:+918685004096" class="contact-link-card"><i class="fa-solid fa-phone" style="color: var(--primary);"></i> +91-8685004096</a>
+        <a href="mailto:bajajsimer@gmail.com" class="contact-link-card"><i class="fa-solid fa-envelope" style="color: var(--primary);"></i> bajajsimer@gmail.com</a>
+        <a href="https://linkedin.com/in/simarb1" target="_blank" class="contact-link-card"><i class="fa-brands fa-linkedin" style="color: var(--primary);"></i> LinkedIn Profile</a>
+        <a href="https://github.com/simar755" target="_blank" class="contact-link-card"><i class="fa-brands fa-github" style="color: var(--primary);"></i> GitHub Repositories</a>
+      </div>
+
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 2rem;">Designed for Simar Rani · 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    function switchTab(evt, tabName) {
+      const contents = document.getElementsByClassName("artifact-content");
+      for (let i = 0; i < contents.length; i++) {
+        contents[i].classList.remove("active");
+      }
+      const buttons = document.getElementsByClassName("tab-btn");
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active");
+      }
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
+</body>
+</html>
