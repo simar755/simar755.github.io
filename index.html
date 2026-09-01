@@ -1,203 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simar Rani | Technical Business Analyst & Project Manager</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --bg: #0f172a;
-      --card-bg: #1e293b;
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
-      --primary: #38bdf8;
-      --accent: #818cf8;
-      --border: #334155;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
-    body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
-    .container { max-width: 1000px; margin: auto; padding: 2.5rem 1.5rem; }
-    
-    /* Header / Hero */
-    header { text-align: center; padding: 3rem 0 2rem; }
-    h1 { font-size: 2.5rem; color: #fff; margin-bottom: 0.5rem; }
-    .tagline { color: var(--primary); font-size: 1.2rem; font-weight: 500; margin-bottom: 1.5rem; }
-    .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
-    .contact-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; transition: color 0.2s; display: flex; align-items: center; gap: 0.4rem; }
-    .contact-links a:hover { color: var(--primary); }
-    .summary-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; text-align: left; max-width: 850px; margin: 0 auto; color: var(--text-muted); }
-    
-    /* Sections */
-    section { margin-top: 3.5rem; }
-    .section-title { font-size: 1.5rem; color: #fff; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
-    .section-title i { color: var(--primary); font-size: 1.2rem; }
-    
-    /* Cards & Grids */
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; }
-    .card-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 0.5rem; }
-    .card-title { font-size: 1.15rem; color: var(--primary); font-weight: 600; }
-    .card-date { font-size: 0.85rem; color: var(--text-muted); }
-    .card-subtitle { font-size: 0.95rem; color: #cbd5e1; margin-bottom: 0.75rem; font-style: italic; }
-    
-    ul.bullet-list { padding-left: 1.2rem; color: var(--text-muted); font-size: 0.95rem; }
-    ul.bullet-list li { margin-bottom: 0.5rem; }
-    
-    /* Skills */
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
-    .skill-category { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; }
-    .skill-category h4 { color: var(--accent); margin-bottom: 0.5rem; font-size: 0.95rem; }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .tag { background: #334155; color: #f1f5f9; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; }
-    
-    /* Achievements */
-    .achievement-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; }
-    .achievement-item i { color: #f59e0b; margin-top: 0.2rem; }
-    
-    footer { text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem; }
-  </style>
-</head>
-<body>
+%-------------------------
+% Resume in Latex
+% Simar Rani - Technical Business Analyst / Scrum Master / Project Coordinator
+%------------------------
 
-  <div class="container">
-    <!-- Header -->
-    <header>
-      <h1>SIMAR RANI</h1>
-      <p class="tagline">Technical Business Analyst & Project Coordinator</p>
-      <div class="contact-links">
-        <a href="tel:+918685004096"><i class="fa-solid fa-phone"></i> +91-8685004096</a>
-        <a href="mailto:bajajsimer@gmail.com"><i class="fa-solid fa-envelope"></i> bajajsimer@gmail.com</a>
-        <a href="https://www.linkedin.com/in/simarb1" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com/simar755" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-      </div>
-      <div class="summary-box">
-        Technical Business Analyst with an engineering background in Python, SQL, and FastAPI. Experienced in translating complex business requirements into structured BRDs, Epics, and Jira user stories with precise acceptance criteria. Proven track record of managing cross-functional teams of 16+ members to maintain a 95% on-time sprint release rate and minimize rework.
-      </div>
-    </header>
+\documentclass[letterpaper,11pt]{article}
 
-    <!-- Experience -->
-    <section>
-      <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Work Experience</h2>
-      
-      <div class="card" style="margin-bottom: 1.5rem;">
-        <div class="card-header">
-          <div class="card-title">Alpha IT Managed Services</div>
-          <div class="card-date">Mohali, India | Apr 2025 – Aug 2026</div>
-        </div>
-        
-        <div style="margin-top: 0.75rem;">
-          <div class="card-subtitle">Business Analyst / Project Coordinator (Oct 2025 – Aug 2026)</div>
-          <ul class="bullet-list">
-            <li>Spearheaded project coordination for <strong>Talyn360</strong>, directing a cross-functional team of 16 engineers across Frontend, Backend, UI/UX, and QA.</li>
-            <li>Authored Epic documentation and translated client needs into <strong>100+ Jira user stories</strong> with explicit acceptance criteria, accelerating sprint kickoffs by 20%.</li>
-            <li>Facilitated Agile ceremonies (sprint planning, daily standups, retrospectives), achieving a <strong>95% on-time sprint completion rate</strong>.</li>
-            <li>Validated FastAPI payload structures and API specs, cutting technical requirement rework by 30%.</li>
-            <li>Standardized bug logging workflows in Jira, cutting defect turnaround times (MTTR) by 25%.</li>
-            <li>Engineered interactive project and sprint dashboards using <strong>Excel & Power BI</strong>.</li>
-          </ul>
-        </div>
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
 
-        <div style="margin-top: 1.2rem;">
-          <div class="card-subtitle">Software Developer Intern (Apr 2025 – Oct 2025)</div>
-          <ul class="bullet-list">
-            <li>Engineered high-performance backend microservices using <strong>FastAPI</strong> and PostgreSQL.</li>
-            <li>Implemented vector search and LLM integrations, optimizing query retrieval and execution pipelines.</li>
-          </ul>
-        </div>
-      </div>
+% Colors
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
 
-      <div class="card">
-        <div class="card-header">
-          <div class="card-title">Excellence Technology</div>
-          <div class="card-date">Chandigarh, India | Jun 2023 – Aug 2023</div>
-        </div>
-        <div class="card-subtitle">Data Science Intern Trainee</div>
-        <ul class="bullet-list">
-          <li>Built an end-to-end Medical Cost Prediction model in Python using Linear Regression, SVM, and Decision Trees.</li>
-          <li>Optimized hyperparameter tuning to achieve an optimal model fit with <strong>86% R² accuracy</strong>.</li>
-        </ul>
-      </div>
-    </section>
+% Page Style
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
-    <!-- Skills -->
-    <section>
-      <h2 class="section-title"><i class="fa-solid fa-code"></i> Technical & Domain Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h4>Project & Agile</h4>
-          <div class="skill-tags">
-            <span class="tag">Scrum / Agile</span>
-            <span class="tag">Jira</span>
-            <span class="tag">Epic Mapping</span>
-            <span class="tag">User Stories</span>
-            <span class="tag">BRD / FRD</span>
-            <span class="tag">Sprint Planning</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h4>Data & Analytics</h4>
-          <div class="skill-tags">
-            <span class="tag">SQL</span>
-            <span class="tag">Power BI</span>
-            <span class="tag">Advanced Excel</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">NumPy</span>
-            <span class="tag">Data Modeling</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h4>Technical Foundations</h4>
-          <div class="skill-tags">
-            <span class="tag">Python</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">REST APIs</span>
-            <span class="tag">Postman</span>
-            <span class="tag">Git / GitHub</span>
-          </div>
-        </div>
-      </div>
-    </section>
+% Margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{0in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.65in}
+\addtolength{\textheight}{1.3in}
 
-    <!-- Education & Achievements -->
-    <section>
-      <div class="grid">
-        <div class="card">
-          <h2 class="section-title" style="margin-top: 0;"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
-          <div style="margin-bottom: 1rem;">
-            <div style="font-weight: 600; color: #fff;">MBA in Data Science</div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);">NMIMS (2025 – Present)</div>
-            <div style="font-size: 0.85rem; color: var(--accent);">Diploma Rank: 6/64 (82.3%)</div>
-          </div>
-          <div>
-            <div style="font-weight: 600; color: #fff;">B.Tech in Computer Science</div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);">Punjabi University (2021 – 2025)</div>
-            <div style="font-size: 0.85rem; color: var(--accent);">CGPA: 8.74 / 10.0</div>
-          </div>
-        </div>
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
 
-        <div class="card">
-          <h2 class="section-title" style="margin-top: 0;"><i class="fa-solid fa-trophy"></i> Key Achievements</h2>
-          <div class="achievement-item">
-            <i class="fa-solid fa-medal"></i>
-            <div><strong>Best Intern of the Month (2025):</strong> Awarded at Alpha IT Managed Services for Agile delivery coordination.</div>
-          </div>
-          <div class="achievement-item">
-            <i class="fa-solid fa-award"></i>
-            <div><strong>Academic Rank 6/64:</strong> Program Topper in Business Management at NMIMS.</div>
-          </div>
-          <div class="achievement-item">
-            <i class="fa-solid fa-code"></i>
-            <div><strong>150+ Coding Challenges:</strong> Solved on LeetCode and GeeksforGeeks.</div>
-          </div>
-        </div>
-      </div>
-    </section>
+% Section Formatting
+\titleformat{\section}{
+  \bfseries \vspace{2pt} \raggedright \large
+}{}{0em}{}[\color{light-grey} {\titlerule[1.5pt]} \vspace{-4pt}]
 
-    <footer>
-      <p>© 2026 Simar Rani. Hosted via GitHub Pages.</p>
-    </footer>
-  </div>
+% Custom Commands
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-1.5pt}}}
+}
 
-</body>
-</html>
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\
+      \textit{#3} & {\color{dark-grey}\small #4}\\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeCompanyHeading}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & {\color{dark-grey}\small #2} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+\color{text-grey}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge SIMAR RANI} \\ \vspace{4pt}
+    \small
+    +91-8685004096 \hspace{3pt}$|$\hspace{3pt}
+    \href{mailto:bajajsimer@gmail.com}{bajajsimer@gmail.com} \hspace{3pt}$|$\hspace{3pt}
+    \href{https://www.linkedin.com/in/simarb1/}{linkedin.com/in/simarb1} \hspace{3pt}$|$\hspace{3pt}
+    \href{https://github.com/simar755}{github.com/simar755}
+\end{center}
+\vspace{-8pt}
+
+%-----------SUMMARY-----------
+\section{PROFESSIONAL SUMMARY}
+\resumeSubHeadingListStart
+    \resumeItem{Technical Business Analyst and Project Coordinator with an engineering background in Python, SQL, and FastAPI. Experienced in owning the complete SDLC, driving Agile ceremonies, leading cross-functional teams of 16+, and authoring high-clarity BRD/FRDs, Epics, and Jira user stories with rigorous acceptance criteria. Proven expertise in bridging engineering, QA, and executive leadership through UAT to reduce dev rework by 30\% and maintain a 95\% on-time delivery record.}
+\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{SKILLS}
+\begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+    \textbf{Project Management \& Agile:} Scrum, Kanban, SDLC, Sprint Planning, Cross-Functional Team Leadership (16+ Members), Epic Documentation, BRD/FRD, User Stories, Acceptance Criteria, Backlog Refinement, UAT Facilitation, QA/Sanity Testing, Risk \& Dependency Management \\
+    \textbf{Data \& Analytics:} SQL, Advanced Microsoft Excel (Pivot Tables, XLOOKUP, Modeling), Power BI Dashboarding, Python (Pandas, NumPy, Matplotlib), Data Validation \\
+    \textbf{Tools \& Platforms:} Jira, Confluence, Postman, Git, GitHub, Bitbucket, VS Code \\
+    \textbf{Technical Foundations:} FastAPI, REST APIs, JSON Schema, Microservices, LLM \& Vector Search Integration
+    }}
+\end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{EXPERIENCE}
+\resumeSubHeadingListStart
+
+    \resumeCompanyHeading
+      {Alpha IT Managed Services}{Mohali, India $|$ Apr. 2025 -- Aug. 2026}
+
+      \resumeSubSubheading
+        {Business Analyst / Project Coordinator}{Oct. 2025 -- Aug. 2026}
+      \resumeItemListStart
+        \resumeItem{Led end-to-end Agile project coordination for \textbf{Talyn360}, directing a 16-member team across Frontend, Backend, UI/UX, and QA to achieve a \textbf{95\% on-time sprint release rate}.}
+        \resumeItem{Authored comprehensive \textbf{BRD/FRD and Epic documentation}, translating complex client requirements into 100+ Jira user stories and acceptance criteria, cutting requirement clarification delays by 30\%.}
+        \resumeItem{Facilitated all Scrum ceremonies (Sprint Planning, Daily Standups, Backlog Refinement, Retrospectives) and managed cross-team dependency mapping across the full SDLC.}
+        \resumeItem{Validated \textbf{FastAPI payload structures} and REST endpoints between frontend and backend teams, mitigating architectural mismatches and reducing dev rework by 30\%.}
+        \resumeItem{Led User Acceptance Testing (\textbf{UAT}) and established standardized Jira defect tracking protocols, cutting bug triage turnaround and MTTR by 25\%.}
+        \resumeItem{Configured dynamic \textbf{Jira, Power BI, and Excel dashboards} (sprint velocity, burn-down charts, release roadmaps) for executive stakeholder visibility.}
+      \resumeItemListEnd
+
+      \resumeSubSubheading
+        {Software Developer Intern}{Apr. 2025 -- Oct. 2025}
+      \resumeItemListStart
+        \resumeItem{Engineered performant backend microservices and RESTful APIs using \textbf{FastAPI} and PostgreSQL for enterprise client modules.}
+        \resumeItem{Implemented \textbf{vector search and LLM integrations}, optimizing document indexing, retrieval pipelines, and query response latency.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Excellence Technology}{Chandigarh, India}
+      {Data Science Intern Trainee}{Jun. 2023 -- Aug. 2023}
+      \resumeItemListStart
+        \resumeItem{Developed an end-to-end \textbf{Medical Cost Prediction system} in Python utilizing Linear Regression, SVM, and Decision Tree algorithms.}
+        \resumeItem{Executed exploratory data analysis, feature engineering, and hyperparameter tuning, achieving an optimal model fit with \textbf{86\% $R^2$ accuracy}.}
+      \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{KEY PROJECTS}
+\resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{Talyn360 Enterprise Platform} $|$ \emph{Jira, Confluence, FastAPI, REST APIs, Agile/Scrum}}{Alpha IT Managed Services}
+      \resumeItemListStart
+        \resumeItem{Spearheaded requirement discovery, technical backlog scoping, and sprint execution for an enterprise SaaS solution across a 16-member engineering cohort.}
+        \resumeItem{Standardized system integration specs and API payload contracts, streamlining cross-module deployment pipelines.}
+      \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+\resumeSubHeadingListStart
+    \resumeSubheading
+      {Narsee Monjee Institute of Management Studies (NMIMS)}{Mumbai, India}
+      {MBA in Data Science \textnormal{(Concurrent with Diploma in Business Management - Rank 6/64, 82.3\%)}}{July 2025 -- Present}
+    \resumeSubheading
+      {Punjabi University}{Patiala, India}
+      {B.Tech in Computer Science and Engineering \textnormal{(CGPA: 8.74/10.0)}}{Sep. 2021 -- May 2025}
+\resumeSubHeadingListEnd
+
+%-----------ACHIEVEMENTS-----------
+\section{ACHIEVEMENTS \& RECOGNITION}
+\resumeSubHeadingListStart
+    \resumeItemListStart
+        \resumeItem{\textbf{Best Intern of the Month (2025):} Recognized at Alpha IT Managed Services for exceptional stakeholder coordination and project delivery.}
+        \resumeItem{\textbf{Academic Excellence (NMIMS):} Ranked 6th overall (Program Topper) and 2nd in Term-End Examinations among 64 candidates.}
+        \resumeItem{\textbf{Technical Problem Solving:} Solved 150+ data structures and algorithmic challenges on LeetCode and GeeksforGeeks.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\end{document}
